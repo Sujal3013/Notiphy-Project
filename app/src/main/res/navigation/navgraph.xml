@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:launchSingleTop="false"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/homefragment">
+
+    <fragment
+        android:id="@+id/homefragment"
+        android:name="com.example.mynotes.Homefragment"
+        android:label="Notiphy"
+        tools:layout="@layout/fragment_homefragment" >
+        <action
+            android:id="@+id/action_homefragment_to_createnotesfragment"
+            app:destination="@id/createnotesfragment" />
+        <action
+            android:id="@+id/action_homefragment_to_editnotesfragment"
+            app:destination="@id/editnotesfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createnotesfragment"
+        android:name="com.example.mynotes.Createnotesfragment"
+        android:label="Add new Notes"
+        tools:layout="@layout/fragment_createnotesfragment" >
+        <action
+            android:id="@+id/action_createnotesfragment_to_homefragment"
+            app:destination="@id/homefragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editnotesfragment"
+        android:name="com.example.mynotes.editnotesfragment"
+        android:label="Edit notes"
+        tools:layout="@layout/fragment_editnotesfragment" >
+        <action
+            android:id="@+id/action_editnotesfragment_to_homefragment"
+            app:destination="@id/homefragment" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="subtitle"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="notes"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="dates"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="priorities"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+
+    </fragment>
+</navigation>
